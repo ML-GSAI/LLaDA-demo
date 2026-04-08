@@ -1,51 +1,28 @@
-<!DOCTYPE html>
-<html>
+﻿<!DOCTYPE html>
+<html lang="en">
     <head>
         <meta charset="utf-8" />
-        <meta name="description" content="DESCRIPTION META TAG" />
-        <meta property="og:title" content="SOCIAL MEDIA TITLE TAG" />
-        <meta
-            property="og:description"
-            content="SOCIAL MEDIA DESCRIPTION TAG TAG"
-        />
-        <meta property="og:url" content="URL OF THE WEBSITE" />
-
-        <meta
-            property="og:image"
-            content="static/image/your_banner_image.png"
-        />
+        <meta name="description" content="LLaDA - Large Language Diffusion Models" />
+        <meta property="og:title" content="LLaDA - Large Language Diffusion Models" />
+        <meta property="og:description" content="LLaDA is a diffusion model with an unprecedented 8B scale, trained entirely from scratch, rivaling LLaMA3 8B in performance." />
+        <meta property="og:url" content="https://ml-gsai.github.io/LLaDA/" />
+        <meta property="og:image" content="static/images/LLaDA_logo.jpg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-
-        <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG" />
-        <meta
-            name="twitter:description"
-            content="TWITTER BANNER DESCRIPTION META TAG"
-        />
-
-        <meta
-            name="twitter:image"
-            content="static/images/your_twitter_banner_image.png"
-        />
+        <meta name="twitter:title" content="LLaDA - Large Language Diffusion Models" />
+        <meta name="twitter:description" content="LLaDA is a diffusion model with an unprecedented 8B scale, rivaling LLaMA3 8B in performance." />
+        <meta name="twitter:image" content="static/images/LLaDA_logo.jpg" />
         <meta name="twitter:card" content="summary_large_image" />
-
-        <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE" />
+        <meta name="keywords" content="LLaDA, Large Language Diffusion Models, Diffusion Models, AI, Machine Learning" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
         <title>Large Language Diffusion Models</title>
-        <link
-            href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-            rel="stylesheet"
-        />
-
+        <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet" />
         <link rel="stylesheet" href="static/css/bulma.min.css" />
         <link rel="stylesheet" href="static/css/bulma-carousel.min.css" />
         <link rel="stylesheet" href="static/css/bulma-slider.min.css" />
         <link rel="stylesheet" href="static/css/fontawesome.all.min.css" />
-        <link
-            rel="stylesheet"
-            href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"
-        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
         <link rel="stylesheet" href="static/css/index.css" />
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -54,683 +31,832 @@
         <script src="static/js/bulma-carousel.min.js"></script>
         <script src="static/js/bulma-slider.min.js"></script>
         <script src="static/js/index.js"></script>
-
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+        <style>
+            /* Modern Design System */
+            :root {
+                --primary-gradient: linear-gradient(135deg, #d8e8f5 0%, #eef6fa 50%, #e4f0f8 100%);
+                --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+                --accent-blue: #1E88E5;
+                --accent-blue: #4a7a9a;
+                --bg-light: #f8f9fa;
+                --text-dark: #2d3748;
+                --card-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+                --hover-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+                --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+
+            body {
+                font-family: 'Google Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+                color: var(--text-dark);
+                overflow-x: hidden;
+            }
+
+            /* Hero Section */
+            .hero-modern {
+                background: linear-gradient(135deg, #fcfdfe 0%, #f2f6fa 30%, #f5f9fc 70%, #f0f5fa 100%);
+                position: relative;
+                overflow: hidden;
+                min-height: 100vh;
+                display: flex;
+                align-items: center;
+            }
+
+            .hero-modern::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+                opacity: 0.5;
+            }
+
+            .hero-content {
+                position: relative;
+                z-index: 2;
+            }
+
+            .hero-logo {
+                max-width: 600px;
+                width: 100%;
+                height: auto;
+                filter: drop-shadow(0 20px 40px rgba(0,0,0,0.4));
+                animation: float 6s ease-in-out infinite;
+            }
+
+            @keyframes float {
+                0%, 100% { transform: translateY(0px); }
+                50% { transform: translateY(-10px); }
+            }
+
+            .hero-title {
+                font-size: 4rem;
+                font-weight: 800;
+                background: linear-gradient(to right, #3d5a80, #5a7fa8);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                margin-bottom: 1rem;
+                line-height: 1.1;
+            }
+
+            .hero-subtitle {
+                font-size: 2rem;
+                color: #6a8fb8;
+                margin: 0 auto 2rem;
+                max-width: 900px;
+                white-space: nowrap;
+            }
+
+            .hero-tldr {
+                background: rgba(255,255,255,0.6);
+                backdrop-filter: blur(10px);
+                border-radius: 16px;
+                padding: 2rem 5rem;
+                border: 1px solid rgba(255,255,255,0.8);
+                margin-top: 2rem;
+                color: #5a7a9a;
+                font-size: 1.3rem;
+                width: fit-content;
+                max-width: 95%;
+                margin-left: auto;
+                margin-right: auto;
+                white-space: nowrap;
+            }
+
+            .hero-tldr strong {
+                color: #3d5a80;
+            }
+
+            /* Stats Section */
+            .stats-section {
+                background: var(--bg-light);
+                padding: 4rem 0;
+                margin-top: -4rem;
+                position: relative;
+                z-index: 10;
+            }
+
+            .stat-card {
+                background: white;
+                border-radius: 20px;
+                padding: 2rem;
+                text-align: center;
+                box-shadow: var(--card-shadow);
+                transition: var(--transition);
+                border: 1px solid rgba(0,0,0,0.05);
+            }
+
+            .stat-card:hover {
+                transform: translateY(-10px);
+                box-shadow: var(--hover-shadow);
+            }
+
+            .stat-number {
+                font-size: 3rem;
+                font-weight: 800;
+                background: var(--primary-gradient);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                line-height: 1;
+            }
+
+            .stat-label {
+                color: #666;
+                font-size: 1rem;
+                margin-top: 0.5rem;
+            }
+
+            /* Section Styling */
+            .section-modern {
+                padding: 6rem 1.5rem;
+            }
+
+            .section-modern .container.is-max-desktop {
+                max-width: 1200px;
+                width: 85%;
+            }
+
+            .section-title {
+                font-size: 2.8rem;
+                font-weight: 700;
+                text-align: center;
+                margin-bottom: 1rem;
+                color: #3d5a80;
+            }
+
+            .section-subtitle {
+                text-align: center;
+                color: #666;
+                font-size: 1.35rem;
+                max-width: 700px;
+                margin: 0 auto 3rem;
+            }
+
+            /* Feature Cards */
+            .feature-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 2rem;
+                margin-top: 3rem;
+            }
+
+            .feature-card {
+                background: white;
+                border-radius: 24px;
+                padding: 2.5rem;
+                box-shadow: var(--card-shadow);
+                transition: var(--transition);
+                border: 1px solid rgba(0,0,0,0.05);
+                position: relative;
+                overflow: hidden;
+            }
+
+            .feature-card::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 4px;
+                background: var(--primary-gradient);
+                transform: scaleX(0);
+                transition: transform 0.3s ease;
+            }
+
+            .feature-card:hover::before {
+                transform: scaleX(1);
+            }
+
+            .feature-card:hover {
+                transform: translateY(-8px);
+                box-shadow: var(--hover-shadow);
+            }
+
+            .feature-icon {
+                width: 60px;
+                height: 60px;
+                background: var(--primary-gradient);
+                border-radius: 16px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 1.5rem;
+                font-size: 1.5rem;
+                color: white;
+            }
+
+            .feature-title {
+                font-size: 1.3rem;
+                font-weight: 700;
+                margin-bottom: 1rem;
+                color: var(--text-dark);
+            }
+
+            .feature-desc {
+                color: #666;
+                line-height: 1.7;
+            }
+
+            /* Method Section */
+            .method-section {
+                background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
+            }
+
+            .method-step {
+                display: flex;
+                align-items: flex-start;
+                gap: 2rem;
+                margin-bottom: 3rem;
+                padding: 2rem;
+                background: white;
+                border-radius: 20px;
+                box-shadow: var(--card-shadow);
+                transition: var(--transition);
+            }
+
+            .method-step:hover {
+                transform: translateX(10px);
+                box-shadow: var(--hover-shadow);
+            }
+
+            .step-number {
+                font-size: 3rem;
+                font-weight: 800;
+                color: var(--accent-blue);
+                opacity: 0.3;
+                line-height: 1;
+                min-width: 80px;
+            }
+
+            .step-content h3 {
+                font-size: 1.5rem;
+                font-weight: 700;
+                margin-bottom: 0.5rem;
+                color: var(--text-dark);
+            }
+
+            .step-content p {
+                color: #666;
+                line-height: 1.7;
+            }
+
+            /* Image Cards */
+            .image-card {
+                background: white;
+                border-radius: 20px;
+                overflow: hidden;
+                box-shadow: var(--card-shadow);
+                transition: var(--transition);
+            }
+
+            .image-card:hover {
+                transform: scale(1.02);
+                box-shadow: var(--hover-shadow);
+            }
+
+            .image-card img {
+                width: 100%;
+                height: auto;
+                display: block;
+            }
+
+            /* Chart Grid */
+            .chart-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1.5rem;
+                margin-top: 2rem;
+            }
+
+            @media (max-width: 1024px) {
+                .chart-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+
+            @media (max-width: 768px) {
+                .chart-grid {
+                    grid-template-columns: 1fr;
+                }
+                .hero-title {
+                    font-size: 2.5rem;
+                }
+            }
+
+            /* Demo Section */
+            .demo-section {
+                background: var(--bg-light);
+                color: var(--text-dark);
+            }
+
+            /* Case Cards */
+            .case-card {
+                background: white;
+                border-radius: 20px;
+                overflow: hidden;
+                box-shadow: var(--card-shadow);
+                margin-bottom: 2rem;
+                border: 1px solid rgba(0,0,0,0.05);
+            }
+
+            .case-header {
+                background: linear-gradient(135deg, #d8e8f5 0%, #c8ddf0 50%, #b8d0e8 100%);
+                color: #3d5a80;
+                padding: 1.6rem 2.2rem;
+                font-weight: 700;
+                font-size: 1.4rem;
+            }
+
+            .case-body {
+                padding: 2rem;
+            }
+
+            .chat-message {
+                margin-bottom: 1.5rem;
+                padding: 1.8rem;
+                border-radius: 16px;
+                position: relative;
+                font-size: 1.5rem;
+            }
+
+            .chat-message.user {
+                background: #f8f9fa;
+                margin-right: 10%;
+                border-bottom-left-radius: 4px;
+            }
+
+            .chat-message.assistant {
+                background: linear-gradient(135deg, #d8e8f5 0%, #c8ddf0 50%, #b8d0e8 100%);
+                color: #3d5a80;
+                margin-left: 10%;
+                border-bottom-right-radius: 4px;
+            }
+
+            .chat-label {
+                font-weight: 700;
+                font-size: 1.3rem;
+                margin-bottom: 0.5rem;
+                opacity: 0.8;
+            }
+
+            .chat-content {
+                line-height: 1.7;
+            }
+
+            /* BibTeX Section */
+            .bibtex-box {
+                background: white;
+                border-radius: 16px;
+                padding: 2.2rem;
+                border: 1px solid rgba(61, 90, 128, 0.1);
+                box-shadow: var(--card-shadow);
+            }
+
+            .bibtex-box pre {
+                color: #333;
+                font-family: 'Fira Code', monospace;
+                font-size: 1.4rem;
+                overflow-x: auto;
+                margin: 0;
+            }
+
+            .bibtex-box code {
+                color: #3d5a80;
+            }
+
+            /* Buttons */
+            .btn-modern {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.5rem;
+                padding: 1.2rem 2.6rem;
+                background: white;
+                color: var(--accent-blue);
+                border-radius: 50px;
+                font-weight: 600;
+                font-size: 1.3rem;
+                text-decoration: none;
+                transition: var(--transition);
+                box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+                border: none;
+                cursor: pointer;
+            }
+
+            .btn-modern:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+                color: var(--accent-blue);
+            }
+
+            .btn-dark {
+                background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+                color: white;
+            }
+
+            .btn-dark:hover {
+                color: white;
+            }
+
+            /* Authors */
+            .authors-grid {
+                display: flex;
+                flex-wrap: nowrap;
+                justify-content: center;
+                gap: 0.4rem;
+                margin: 2rem 0;
+            }
+
+            .author-tag {
+                background: rgba(255,255,255,0.6);
+                backdrop-filter: blur(10px);
+                padding: 0.7rem 1.3rem;
+                border-radius: 50px;
+                color: #6a8fb8;
+                font-size: 1.35rem;
+                transition: var(--transition);
+                border: 1px solid rgba(255,255,255,0.8);
+                white-space: nowrap;
+            }
+
+            .author-tag:hover {
+                background: rgba(255,255,255,0.25);
+                transform: translateY(-2px);
+            }
+
+            .author-tag a {
+                color: #6a8fb8;
+                text-decoration: none;
+            }
+
+            .author-tag sup {
+                color: #3d5a80;
+                font-weight: 700;
+            }
+
+            /* Affiliations */
+            .affiliations {
+                display: flex;
+                justify-content: center;
+                gap: 2rem;
+                margin-top: 1rem;
+                color: #6a8fb8;
+                font-size: 1.5rem;
+            }
+
+            /* Fade In Animation */
+            .fade-in {
+                opacity: 0;
+                transform: translateY(30px);
+                transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+
+            .fade-in.visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            /* Divider */
+            .divider {
+                width: 60px;
+                height: 4px;
+                background: var(--primary-gradient);
+                border-radius: 2px;
+                margin: 1rem auto 2rem;
+            }
+
+            /* Links Section */
+            .links-section {
+                display: flex;
+                justify-content: center;
+                gap: 1rem;
+                flex-wrap: wrap;
+                margin-top: 2rem;
+            }
+        </style>
     </head>
 
     <body>
-        <section class="section" style="padding: 8px 0; text-align: center; background: #fff;">
-            <div class="container">
-                <a href="/">
-                    <img
-                        src="static/images/LLaDA_logo.jpg"
-                        alt="LLaDA Logo"
-                        style="max-width: 240px; width: 100%; height: auto;"
-                    />
-                </a>
-            </div>
-        </section>
-        
-        <section class="hero">
-            <div class="hero-body" style="padding-top: 0;">
-                <div class="container is-max-desktop">
-                    <div class="columns is-centered">
-                        <div class="column has-text-centered">
-                            <h1 class="title is-1 publication-title">
-                                Large Language Diffusion Models
-                            </h1>
+        <!-- Hero Section -->
+        <section class="hero-modern">
+            <div class="container hero-content">
+                <div class="columns is-centered">
+                    <div class="column has-text-centered">
+                        <a href="/">
+                            <img src="static/images/LLaDA_logo_yulan.png" alt="LLaDA Logo" class="hero-logo" />
+                        </a>
+                        
+                        <h1 class="hero-title">Large Language Diffusion Models</h1>
+                        
+                        <p class="hero-subtitle">
+                            A new paradigm for large language modeling based on diffusion
+                        </p>
 
-                            <div class="is-size-5 publication-authors">
-                                <span class="author-block">
-                                    <a
-                                        href="https://scholar.google.com/citations?user=mVaNdrsAAAAJ"
-                                        target="_blank"
-                                        >Shen Nie</a
-                                    ><sup>1</sup>,</span
-                                >
-                                <span class="author-block">
-                                    <a href="" target="_blank">Fengqi Zhu</a
-                                    ><sup>1</sup>,</span
-                                >
-                                <span class="author-block">
-                                    <a
-                                        href="https://yyyouy.github.io/"
-                                        target="_blank"
-                                        >Zebin You</a
-                                    ><sup>1</sup>,</span
-                                >
-                                <span class="author-block">
-                                    <a
-                                        href="https://scholar.google.com/citations?user=cAz9PToAAAAJ"
-                                        target="_blank"
-                                        >Xiaolu Zhang</a
-                                    ><sup>2</sup>,</span
-                                >
-                                <span class="author-block">
-                                    <a href="" target="_blank">Jingyang Ou</a
-                                    ><sup>1</sup>,</span
-                                >
-                                <span class="author-block">
-                                    <a href="" target="_blank">Jun Hu</a
-                                    ><sup>2</sup>,</span
-                                >
-                                <span class="author-block">
-                                    <a
-                                        href="https://scholar.google.com/citations?user=mCVvloEAAAAJ"
-                                        target="_blank"
-                                        >Jun Zhou</a
-                                    ><sup>2</sup>,</span
-                                >
-                                <span class="author-block">
-                                    <a
-                                        href="https://scholar.google.com/citations?user=j8K1FqEAAAAJ"
-                                        target="_blank"
-                                        >Yankai Lin</a
-                                    ><sup>1</sup>,</span
-                                >
-                                <span class="author-block">
-                                    <a
-                                        href="https://scholar.google.com/citations?user=tbxCHJgAAAAJ"
-                                        target="_blank"
-                                        >Ji-Rong Wen</a
-                                    ><sup>1</sup>,</span
-                                >
-                                <span class="author-block">
-                                    <a
-                                        href="https://zhenxuan00.github.io/"
-                                        target="_blank"
-                                        >Chongxuan Li</a
-                                    ><sup>1</sup></span
-                                >
+                        <!-- Authors -->
+                        <div class="authors-grid">
+                            <span class="author-tag"><a href="https://scholar.google.com/citations?user=mVaNdrsAAAAJ" target="_blank">Shen Nie</a><sup>1</sup></span>
+                            <span class="author-tag"><a href="https://scholar.google.com/citations?user=tIYpDBAAAAAJ&hl=en" target="_blank">Fengqi Zhu</a><sup>1</sup></span>
+                            <span class="author-tag"><a href="https://yyyouy.github.io/" target="_blank">Zebin You</a><sup>1</sup></span>
+                            <span class="author-tag"><a href="https://scholar.google.com/citations?user=cAz9PToAAAAJ" target="_blank">Xiaolu Zhang</a><sup>2</sup></span>
+                            <span class="author-tag"><a href="https://jingyangou.github.io/" target="_blank">Jingyang Ou</a><sup>1</sup></span>
+                            <span class="author-tag"><a href="" target="_blank">Jun Hu</a><sup>2</sup></span>
+                            <span class="author-tag"><a href="https://scholar.google.com/citations?user=mCVvloEAAAAJ" target="_blank">Jun Zhou</a><sup>2</sup></span>
+                            <span class="author-tag"><a href="https://scholar.google.com/citations?user=j8K1FqEAAAAJ" target="_blank">Yankai Lin</a><sup>1</sup></span>
+                            <span class="author-tag"><a href="https://scholar.google.com/citations?user=tbxCHJgAAAAJ" target="_blank">Ji-Rong Wen</a><sup>1</sup></span>
+                            <span class="author-tag"><a href="https://zhenxuan00.github.io/" target="_blank">Chongxuan Li</a><sup>1</sup></span>
+                        </div>
+
+                        <div class="affiliations">
+                            <span><sup>1</sup> Renmin University of China</span>
+                            <span><sup>2</sup> Ant Group</span>
+                        </div>
+
+                        <!-- Links -->
+                        <div class="links-section">
+                            <a href="http://arxiv.org/abs/2502.09992" target="_blank" class="btn-modern">
+                                <i class="fas fa-file-pdf"></i> Paper
+                            </a>
+                            <a href="https://github.com/ML-GSAI/LLaDA" target="_blank" class="btn-modern">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                            <a href="https://huggingface.co/GSAI-ML" target="_blank" class="btn-modern">
+                                🤗 Model
+                            </a>
+                        </div>
+
+                        <!-- Comparison Charts -->
+                        <div class="hero-charts fade-in" style="margin-top: 2rem; display: flex; justify-content: center; gap: 2.5rem; flex-wrap: wrap;">
+                            <div style="background: rgba(255,255,255,0.25); backdrop-filter: blur(10px); border-radius: 16px; padding: 2rem; border: 1px solid rgba(255,255,255,0.4); width: 760px; min-height: 500px; display: flex; align-items: center; justify-content: center; overflow: visible;">
+                                <img src="static/images/LLaDA_vs_LLaMA.svg" alt="LLaDA vs LLaMA" style="width: 540px; height: auto; display: block;" />
                             </div>
-
-                            <div class="is-size-5 publication-authors">
-                                <span class="author-block"
-                                    ><sup>1</sup>Renmin University of
-                                    China,</span
-                                >
-                                <span class="author-block"
-                                    ><sup>2</sup>Ant Group</span
-                                >
+                            <div style="background: rgba(255,255,255,0.25); backdrop-filter: blur(10px); border-radius: 16px; padding: 2rem; border: 1px solid rgba(255,255,255,0.4); width: 760px; min-height: 500px; display: flex; align-items: center; justify-content: center; overflow: visible;">
+                                <img src="static/images/LLaDA_vs_LLaMA_chat.svg" alt="LLaDA vs LLaMA Chat" style="width: 570px; height: auto; display: block;" />
                             </div>
+                        </div>
 
-                            <div class="column has-text-centered">
-                                <div class="publication-links">
-                                    <span class="link-block">
-                                        <a
-                                            href="http://arxiv.org/abs/2502.09992"
-                                            target="_blank"
-                                            class="external-link button is-normal is-rounded is-dark"
-                                        >
-                                            <span class="icon">
-                                                <i class="fas fa-file-pdf"></i>
-                                            </span>
-                                            <span>Paper</span>
-                                        </a>
-                                    </span>
+                        <div class="hero-tldr">
+                            <strong>TL;DR:</strong> We introduce LLaDA, a diffusion model with an unprecedented 8B scale, trained entirely from scratch, rivaling LLaMA3 8B in performance.
+                        </div>
 
-                                    <span class="link-block">
-                                        <a
-                                            href="https://github.com/ML-GSAI/LLaDA"
-                                            target="_blank"
-                                            class="external-link button is-normal is-rounded is-dark"
-                                        >
-                                            <span class="icon">
-                                                <i class="fab fa-github"></i>
-                                            </span>
-                                            <span>Code</span>
-                                        </a>
-                                    </span>
-
-                                    <span class="link-block">
-                                        <a
-                                            href="https://huggingface.co/GSAI-ML"
-                                            target="_blank"
-                                            class="external-link button is-normal is-rounded is-dark"
-                                        >
-                                            <span class="icon">🤗</span>
-                                            <span>Model</span>
-                                        </a>
-                                    </span>
-                                </div>
-                            </div>
-
-                            <p style="text-align: center; margin-top: 20px; font-size: 24px;">
-                                <strong>TL;DR:</strong> <span style="color: #1E88E5;">We introduce LLaDA, a diffusion model with an unprecedented 8B scale, trained entirely from scratch, rivaling LLaMA3 8B in performance.
-                                </span>
- 
-                            </p>
-
+                        <!-- Quote in Hero -->
+                        <div class="hero-quote fade-in" style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(106, 143, 184, 0.2);">
+                            <p class="quote-text" style="font-size: 1.9rem; color: #6a8fb8; font-style: italic; font-family: 'Times New Roman', serif;">What is now proved was once only imagined.</p>
+                            <p class="quote-author" style="color: #6a8fb8; opacity: 0.8; margin-top: 0.5rem; font-size: 1.2rem;">— William Blake</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="hero is-small">
-            <div class="hero-body">
-                <div
-                    class="container"
-                    style="
-                        display: flex;
-                        justify-content: center;
-                        gap: 1px;
-                    "
-                >
-                    <div class="item" style="text-align: center">
-                        <img
-                            src="static/images/LLaDA_vs_LLaMA.svg"
-                            alt="LLaDA_vs_LLaMA"
-                            style="width: 75%; max-width: 1000px;"
-                        />
-                    </div>
-                    <div class="item" style="text-align: center">
-                        <img
-                            src="static/images/LLaDA_vs_LLaMA_chat.svg"
-                            alt="LLaDA_vs_LLaMA_chat"
-                            style="width: 75%; max-width: 1000px;"
-                        />
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <section
-            class="section"
-            id="Intro"
-            style="text-align: center; font-weight: bold; position: relative; padding: 50px 20px;"
-        >
-            <div
-            style="
-                width: 100%;
-                height: 1px;
-                background-color: rgba(0, 0, 0, 0.1);
-                margin: 0 auto 15px auto;
-                "
-            ></div>
-            <div
-                class="container is-max-desktop content"
-                style="position: relative; font-size: 1.8rem; color: #1E88E5; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); font-style: italic; font-family: 'Times New Roman', serif;"
-            >
-                What is now proved was once only imagined. ——— William Blake
-            </div>
 
-            <div
-                style="
-                    position: absolute;
-                    bottom: -10px;
-                    right: 50px;
-                    font-weight: bold;
-                    font-size: 1rem;
-                    color: #666;
-                    font-style: italic;
-                "
-            >
-            </div>
-        </section>
 
-        <section class="section" id="Introduction">
-            <div class="container is-max-desktop content">
-                <h2 class="title" style="font-family: 'Times New Roman', serif;">
-                    Motivation
-                </h2>
 
-                <p style="font-size: 1.6rem; font-family: 'Times New Roman', Times, serif;">
-                    We contend that the intelligence of LLMs—manifested in <i>scalability</i>, <i>instruction-following</i>, <i>in-context learning</i>,
-                    <i>conversational ability</i>, and <i>compression—stems</i> not from the autoregressive mechanism per se, but rather from
-                    the core principle of generative modeling: approximating the true language distribution through maximum
-                    likelihood estimation.
+        <!-- Motivation Section -->
+        <section class="section-modern" style="background: var(--bg-light);">
+            <div class="container is-max-desktop">
+                <h2 class="section-title fade-in">Motivation</h2>
+                <div class="divider"></div>
+                
+                <p style="font-size: 2.1rem; font-family: 'Times New Roman', Times, serif; line-height: 1.8; margin-bottom: 1.5rem; margin-top: 2rem; text-align: justify; hyphens: auto;">
+                    We contend that the intelligence of LLMs—manifested in <i>scalability</i>, <i>instruction-following</i>, <i>in-context learning</i>, <i>conversational ability</i>, and <i>compression—stems</i> not from the autoregressive mechanism per se, but rather from the core principle of generative modeling: approximating the true language distribution through maximum likelihood estimation.
                 </p>
-                <p style="font-size: 1.6rem; font-family: 'Times New Roman', Times, serif;">
-                    We introduce <b>LLaDA</b> (<b>L</b>arge <b>La</b>nguage <b>D</b>iffusion with m<b>A</b>sking), a simple yet principled
-                    generative paradigm for large language models that demonstrates the aforementioned remarkable capabilities.
-                </p>
-
-                <h2 class="title" style="font-family: 'Times New Roman', serif;">
-                    Method
-                </h2>
-
-                <p style="font-size: 1.6rem; font-family: 'Times New Roman', Times, serif;">
-                    LLaDA is a masked diffusion model [1, 2, 3] that follows standard pretraining and SFT
-                    while sampling via diffusion. During pretraining, it masks all tokens randomly
-                    at ratio \( t ∼ U[0,1] \); in SFT, only response tokens may be masked. The model
-                    simulates diffusion from full masking (\(t = 1\)) to unmasking (\(t = 0\)), predicting
-                    all masks simultaneously at each step with flexible remasking.
+                <p style="font-size: 2.1rem; font-family: 'Times New Roman', Times, serif; line-height: 1.8; text-align: justify; hyphens: auto;">
+                    We introduce <b>LLaDA</b> (<b>L</b>arge <b>La</b>nguage <b>D</b>iffusion with m<b>A</b>sking), a simple yet principled generative paradigm for large language models that demonstrates the aforementioned remarkable capabilities.
                 </p>
             </div>
+        </section>
 
-            <div class="container is-max-desktop content">
-                <img
-                    src="static/images/method.svg"
-                    alt="method"
-                    style="width: 100%; height: auto; display: block; margin-bottom: 30px;"
-                />
+        <!-- Method Section -->
+        <section class="section-modern method-section" id="Method">
+            <div class="container is-max-desktop">
+                <h2 class="section-title fade-in">Method</h2>
+                <div class="divider"></div>
+
+                <div class="image-card fade-in" style="margin-bottom: 3rem; margin-top: 2rem;">
+                    <img src="static/images/method.svg" alt="Method" />
+                </div>
+
+                <p style="font-size: 1.9rem; font-family: 'Times New Roman', Times, serif; line-height: 1.8; text-align: justify; hyphens: auto;">
+                    LLaDA is a masked diffusion model [1, 2, 3] that follows standard pretraining and SFT while sampling via diffusion. During pretraining, it masks all tokens randomly at ratio \( t \sim U[0,1] \); in SFT, only response tokens may be masked. The model simulates diffusion from full masking (\(t = 1\)) to unmasking (\(t = 0\)), predicting all masks simultaneously at each step with flexible remasking.
+                </p>
             </div>
+        </section>
 
-
-            <div class="container is-max-desktop content">
-                <h2 class="title" style="font-family: 'Times New Roman', serif;">
-                    Scalability
-                </h2>
-                <p style="font-size: 1.6rem; font-family: 'Times New Roman', Times, serif;">
-                    LLaDA demonstrates impressive scalability, with its overall
-                    trend being highly competitive with that of autoregressive baseline on the same data.
+        <!-- Scalability Section -->
+        <section class="section-modern" style="background: var(--bg-light);">
+            <div class="container is-max-desktop">
+                <h2 class="section-title fade-in">Scalability</h2>
+                <div class="divider"></div>
+                <p style="font-size: 1.9rem; font-family: 'Times New Roman', Times, serif; line-height: 1.8; margin-bottom: 1.5rem; text-align: justify; hyphens: auto;">
+                    LLaDA demonstrates impressive scalability, with its overall trend being highly competitive with that of autoregressive baseline on the same data.
                 </p>
 
-            </div>
-
-            <div class="container is-max-desktop content">
-                <div class="row" style="display: flex; justify-content: center; gap: 20px;">
-                    <img
-                        src="static/images/scaling_mmlu.svg"
-                        alt="scaling_mmlu"
-                        style="
-                            width: 30%;
-                            height: auto;
-                            margin-bottom: 20px;
-                        "
-                    />
-                    <img
-                        src="static/images/scaling_arc_c.svg"
-                        alt="scaling_arc_c"
-                        style="width: 30%; height: auto; margin-bottom: 20px"
-                    />
-                    <img
-                        src="static/images/scaling_cmmlu.svg"
-                        alt="scaling_cmmlu"
-                        style="width: 30%; height: auto; margin-bottom: 20px"
-                    />
-                </div>
-                <div class="row" style="display: flex; justify-content: center; gap: 20px;">
-                    <img
-                        src="static/images/scaling_piqa.svg"
-                        alt="scaling_piqa"
-                        style="
-                            width: 30%;
-                            height: auto;
-                            margin-bottom: 20px;
-                        "
-                    />
-                    <img
-                        src="static/images/scaling_gsm8k.svg"
-                        alt="scaling_gsm8k"
-                        style="width: 30%; height: auto; margin-bottom: 20px"
-                    />
-                    <img
-                        src="static/images/scaling_humaneval.svg"
-                        alt="scaling_humaneval"
-                        style="width: 30%; height: auto; margin-bottom: 20px"
-                    />
+                <div class="chart-grid">
+                    <div class="image-card fade-in">
+                        <img src="static/images/scaling_mmlu.svg" alt="MMLU Scaling" />
+                    </div>
+                    <div class="image-card fade-in">
+                        <img src="static/images/scaling_arc_c.svg" alt="ARC-C Scaling" />
+                    </div>
+                    <div class="image-card fade-in">
+                        <img src="static/images/scaling_cmmlu.svg" alt="CMMLU Scaling" />
+                    </div>
+                    <div class="image-card fade-in">
+                        <img src="static/images/scaling_piqa.svg" alt="PIQA Scaling" />
+                    </div>
+                    <div class="image-card fade-in">
+                        <img src="static/images/scaling_gsm8k.svg" alt="GSM8K Scaling" />
+                    </div>
+                    <div class="image-card fade-in">
+                        <img src="static/images/scaling_humaneval.svg" alt="HumanEval Scaling" />
+                    </div>
                 </div>
             </div>
-
         </section>
 
-
-        <section class="section" id="Sampling Process">
-            <div
-            style="
-                width: 100%;
-                height: 1px;
-                background-color: rgba(0, 0, 0, 0.1);
-                margin: 0 auto 15px auto;
-                "
-            ></div>
-
-            <div class="container is-max-desktop content">
-
-                <h2 class="title" style="font-family: 'Times New Roman', serif;">
-                    A text generation method different from the traditional left-to-right approach
-                </h2>
-
-                <p style="font-size: 1.6rem; font-family: 'Times New Roman', Times, serif;">
-                    Prompt: <i>Explain what artificial intelligence is.</i>
+        <!-- Sampling Process Section -->
+        <section class="section-modern" id="Sampling">
+            <div class="container is-max-desktop">
+                <h2 class="section-title fade-in">Sampling Process</h2>
+                <div class="divider"></div>
+                <p style="font-size: 1.9rem; font-family: 'Times New Roman', Times, serif; line-height: 1.8; margin-bottom: 1.5rem; text-align: center; hyphens: auto;">
+                    A text generation method different from traditional left-to-right approach.
                 </p>
 
-                <img
-                    src="static/images/diff_normal_150ms.gif"
-                    alt="diff_normal_150ms.gif"
-                    style="width: 100%; height: auto; display: block; margin-bottom: 10px; margin-left: auto; margin-right: auto;"
-                />
+                <p style="text-align: center; color: #666; font-size: 1.65rem; margin-bottom: 2rem;">
+                    <i>Prompt: "Explain what artificial intelligence is."</i>
+                </p>
 
-             </div>
-
-        </section>
-
-
-        <section class="section" id="Case study">
-            <div
-            style="
-                width: 100%;
-                height: 1px;
-                background-color: rgba(0, 0, 0, 0.1);
-                margin: 0 auto 15px auto;
-                "
-            ></div>
-
-            <div class="container is-max-desktop content">
-                <h2 class="title" style="font-family: 'Times New Roman', serif;">
-                    Case Studies
-                </h2>
-
-                <div style="width: 100%; font-family: 'Times New Roman', serif; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
-                    <!-- Title Section -->
-                    <div style="background-color: #f4f4f4; padding: 15px; font-weight: bold; text-align: center; border-bottom: 1px solid #ddd; font-size: 24px;">
-                        Math problem
-                    </div>
-
-                        <!-- User and LLaDA-Instruct Sections -->
-                        <div style="display: flex; flex-direction: column; padding: 20px;">
-
-                            <!-- User Section -->
-                            <div style="margin-bottom: 20px;">
-                                <div style="font-weight: bold; color: #333; padding-bottom: 10px; font-size: 22px;">User</div>
-                                <div style="background-color: #f9f9f9; padding: 20px; border: 1px solid #ddd; border-radius: 8px; line-height: 1.6; font-size: 22px;">
-                                    Emma decides to run 4 sprints 5 times a week. She runs 75 meters each sprint. How many total meters does she run a week?
-                                </div>
-                            </div>
-
-                            <!-- LLaDA-Instruct Section -->
-                            <div>
-                                <div style="font-weight: bold; color: #333; padding-bottom: 10px; font-size: 22px;">LLaDA-Instruct</div>
-                                <div style="background-color: #f9f9f9; padding: 20px; border: 1px solid #ddd; border-radius: 8px; line-height: 1.6; font-size: 22px;">
-                                    Emma runs 4 sprints each time, so she runs a total of 4 x 5 = 20 sprints a week. Each sprint is 75 meters long, so Emma runs a total of 20 x 75 = 1500 meters a week. The final result is 1500.
-                                </div>
-                            </div>
-                        </div>
+                <div class="image-card fade-in">
+                    <img src="static/images/diff_normal_150ms.gif" alt="Diffusion Sampling" style="width: 100%; height: auto;" />
                 </div>
-
-                <div style="width: 100%; font-family: 'Times New Roman', serif; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
-                    <!-- Title Section -->
-                    <div style="background-color: #f4f4f4; padding: 15px; font-weight: bold; text-align: center; border-bottom: 1px solid #ddd; font-size: 24px;">
-                        Daily life
-                    </div>
-
-                        <!-- User and LLaDA-Instruct Sections -->
-                        <div style="display: flex; flex-direction: column; padding: 20px;">
-
-                            <!-- User Section -->
-                            <div style="margin-bottom: 20px;">
-                                <div style="font-weight: bold; color: #333; padding-bottom: 10px; font-size: 22px;">User</div>
-                                <div style="background-color: #f9f9f9; padding: 20px; border: 1px solid #ddd; border-radius: 8px; line-height: 1.6; font-size: 22px;">
-                                    Please recommend me three famous movies
-                                </div>
-                            </div>
-
-                            <!-- LLaDA-Instruct Section -->
-                            <div>
-                                <div style="font-weight: bold; color: #333; padding-bottom: 10px; font-size: 22px;">LLaDA-Instruct</div>
-                                <div style="background-color: #f9f9f9; padding: 20px; border: 1px solid #ddd; border-radius: 8px; line-height: 1.6; font-size: 22px;">
-                                    Certainly! Here are three famous movies that have achieved widespread popularity and critical acclaim: <br>
-                                    1. <b>The Shawshank Redemption</b> (1994) - Inspired by a novella and directed by Frank Darabont, this film tells the story of Andy Dufresne, a man convicted of murdering his wife, dealing with his harsh life in Shawshank Prison and forming an unlikely friendship with a fellow inmate. <br>
-                                    2. <b>The Godfather</b> (1972) - Directed by Francis Ford Coppola, this film is based on Mario Puzo's novel of the same name. It follows the story of the Corleone family, particularly Michael Corleone, who rises to power and takes over the family's criminal empire. <br>
-                                    3. <b>The Empire Strikes Back</b> (1980) - Directed by George Lucas, this film continues the story of a young Skywalker in the Star Wars saga. It follows Luke Skywalker as he helps the Rebel Alliance fight against the Galactic Empire and destroy the powerful weapon, the Death Star. <br>
-                                    All of these films are celebrated for their cinematic achievements, powerful storytelling, and memorable characters.
-                                </div>
-                            </div>
-                        </div>
-                </div>
-
-                <div style="width: 100%; font-family: 'Times New Roman', serif; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
-                    <!-- Title Section -->
-                    <div style="background-color: #f4f4f4; padding: 15px; font-weight: bold; text-align: center; border-bottom: 1px solid #ddd; font-size: 24px;">
-                        Code generation
-                    </div>
-
-                        <!-- User and LLaDA-Instruct Sections -->
-                        <div style="display: flex; flex-direction: column; padding: 20px;">
-
-                            <!-- User Section -->
-                            <div style="margin-bottom: 20px;">
-                                <div style="font-weight: bold; color: #333; padding-bottom: 10px; font-size: 22px;">User</div>
-                                <div style="background-color: #f9f9f9; padding: 20px; border: 1px solid #ddd; border-radius: 8px; line-height: 1.6; font-size: 22px;">
-                                    I am writing python code, I have an array, please
-                                    help me sort it from largest to smallest
-                                </div>
-                            </div>
-
-                            <!-- LLaDA-Instruct Section -->
-                            <div>
-                                <div style="font-weight: bold; color: #333; padding-bottom: 10px; font-size: 22px;">LLaDA-Instruct</div>
-                                <div style="background-color: #f9f9f9; padding: 20px; border: 1px solid #ddd; border-radius: 8px; line-height: 1.6; font-size: 22px;">
-                                    Certainly! You can sort an array from the largest to
-                                    smallest in Python using the ‘sort()’ method or the
-                                    ‘sorted()‘ function. Here’s an example: <br />
-                                    ### Using ‘sort()’ method: <br />my array = [3, 1,
-                                    4, 1, 5, 2] <br />my array.sort(reverse=True)<br />
-                            print(my array)
-                                </div>
-                            </div>
-                        </div>
-                </div>
-
-                <div style="width: 100%; font-family: 'Times New Roman', serif; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
-                    <!-- Title Section -->
-                    <div style="background-color: #f4f4f4; padding: 15px; font-weight: bold; text-align: center; border-bottom: 1px solid #ddd; font-size: 24px;">
-                        Translation (English &rarr; Chinese)
-                    </div>
-
-                        <!-- User and LLaDA-Instruct Sections -->
-                        <div style="display: flex; flex-direction: column; padding: 20px;">
-
-                            <!-- User Section -->
-                            <div style="margin-bottom: 20px;">
-                                <div style="font-weight: bold; color: #333; padding-bottom: 10px; font-size: 22px;">User</div>
-                                <div style="background-color: #f9f9f9; padding: 20px; border: 1px solid #ddd; border-radius: 8px; line-height: 1.6; font-size: 22px;">
-                                    Please help me translate into Chinese: ‘What is now proved was once only imagined’
-                                </div>
-                            </div>
-
-                            <!-- LLaDA-Instruct Section -->
-                            <div>
-                                <div style="font-weight: bold; color: #333; padding-bottom: 10px; font-size: 22px;">LLaDA-Instruct</div>
-                                <div style="background-color: #f9f9f9; padding: 20px; border: 1px solid #ddd; border-radius: 8px; line-height: 1.6; font-size: 22px;">
-                                    现在被证明的曾经只是想象
-                                </div>
-                            </div>
-                        </div>
-                </div>
-
-                <div style="width: 100%; font-family: 'Times New Roman', serif; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
-                    <!-- Title Section -->
-                    <div style="background-color: #f4f4f4; padding: 15px; font-weight: bold; text-align: center; border-bottom: 1px solid #ddd; font-size: 24px;">
-                        Translation (English &rarr; German)
-                    </div>
-
-                        <!-- User and LLaDA-Instruct Sections -->
-                        <div style="display: flex; flex-direction: column; padding: 20px;">
-
-                            <!-- User Section -->
-                            <div style="margin-bottom: 20px;">
-                                <div style="font-weight: bold; color: #333; padding-bottom: 10px; font-size: 22px;">User</div>
-                                <div style="background-color: #f9f9f9; padding: 20px; border: 1px solid #ddd; border-radius: 8px; line-height: 1.6; font-size: 22px;">
-                                    Please help me translate into German: ‘What is now proved was once only imagined’
-                                </div>
-                            </div>
-
-                            <!-- LLaDA-Instruct Section -->
-                            <div>
-                                <div style="font-weight: bold; color: #333; padding-bottom: 10px; font-size: 22px;">LLaDA-Instruct</div>
-                                <div style="background-color: #f9f9f9; padding: 20px; border: 1px solid #ddd; border-radius: 8px; line-height: 1.6; font-size: 22px;">
-                                    Wer heute bestätigt ist, war einst nur immaginiert.
-                                </div>
-                            </div>
-                        </div>
-                </div>
-
-                <div style="width: 100%; font-family: 'Times New Roman', serif; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
-                    <!-- Title Section -->
-                    <div style="background-color: #f4f4f4; padding: 15px; font-weight: bold; text-align: center; border-bottom: 1px solid #ddd; font-size: 24px;">
-                        Multi-turn dialogue case 1
-                    </div>
-
-                        <!-- User and LLaDA-Instruct Sections -->
-                        <div style="display: flex; flex-direction: column; padding: 20px;">
-
-                            <!-- User Section -->
-                            <div style="margin-bottom: 20px;">
-                                <div style="font-weight: bold; color: #333; padding-bottom: 10px; font-size: 22px;">User</div>
-                                <div style="background-color: #f9f9f9; padding: 20px; border: 1px solid #ddd; border-radius: 8px; line-height: 1.6; font-size: 22px;">
-                                    Could you please share with me what the initial two lines of the renowned poem `The Road Not Taken'?
-                                </div>
-                            </div>
-
-                            <!-- LLaDA-Instruct Section -->
-                            <div>
-                                <div style="font-weight: bold; color: #333; padding-bottom: 10px; font-size: 22px;">LLaDA-Instruct</div>
-                                <div style="background-color: #f9f9f9; padding: 20px; border: 1px solid #ddd; border-radius: 8px; line-height: 1.6; font-size: 22px;">
-                                    Certainly! The initial two lines of the renowned poem ``The Road Not Taken" by Robert Frost are: ``Two roads diverged in a yellow wood,
-                                    And sorry I could not travel both." These lines set the stage for the poem, introducing the idea of a speaker facing a choice between two paths.
-                                </div>
-                            </div>
-
-                            <!-- User Section -->
-                            <div style="margin-bottom: 20px;">
-                                <div style="font-weight: bold; color: #333; padding-bottom: 10px; font-size: 22px;">User</div>
-                                <div style="background-color: #f9f9f9; padding: 20px; border: 1px solid #ddd; border-radius: 8px; line-height: 1.6; font-size: 22px;">
-                                    Please help me translate into Chinese.
-                                </div>
-                            </div>
-
-                            <!-- LLaDA-Instruct Section -->
-                            <div>
-                                <div style="font-weight: bold; color: #333; padding-bottom: 10px; font-size: 22px;">LLaDA-Instruct</div>
-                                <div style="background-color: #f9f9f9; padding: 20px; border: 1px solid #ddd; border-radius: 8px; line-height: 1.6; font-size: 22px;">
-                                    Sure! The first two lines of ``The Road Not Taken" by Robert Frost can be translated into Chinese as:
-                                    ``两条路分岔在黄色的树林中，遗憾我不能同时走''
-                                </div>
-                            </div>
-
-
-                            <!-- User Section -->
-                            <div style="margin-bottom: 20px;">
-                                <div style="font-weight: bold; color: #333; padding-bottom: 10px; font-size: 22px;">User</div>
-                                <div style="background-color: #f9f9f9; padding: 20px; border: 1px solid #ddd; border-radius: 8px; line-height: 1.6; font-size: 22px;">
-                                    Please translate into German.
-                                </div>
-                            </div>
-
-                            <!-- LLaDA-Instruct Section -->
-                            <div>
-                                <div style="font-weight: bold; color: #333; padding-bottom: 10px; font-size: 22px;">LLaDA-Instruct</div>
-                                <div style="background-color: #f9f9f9; padding: 20px; border: 1px solid #ddd; border-radius: 8px; line-height: 1.6; font-size: 22px;">
-                                    Sure! The first two lines of ``The Road Not Taken" by Robert Frost can be translated into German as:
-                                    ``Zwei Wege trennten sich im gelben Wald, und leider konnte ich nicht beide tun."
-                                </div>
-                            </div>
-
-                            <!-- User Section -->
-                            <div style="margin-bottom: 20px;">
-                                <div style="font-weight: bold; color: #333; padding-bottom: 10px; font-size: 22px;">User</div>
-                                <div style="background-color: #f9f9f9; padding: 20px; border: 1px solid #ddd; border-radius: 8px; line-height: 1.6; font-size: 22px;">
-                                    Please also write a poem about life choices. I require 5 sentences, and the first word of each sentence starts with C as the first letter.
-                                </div>
-                            </div>
-
-                            <!-- LLaDA-Instruct Section -->
-                            <div>
-                                <div style="font-weight: bold; color: #333; padding-bottom: 10px; font-size: 22px;">LLaDA-Instruct</div>
-                                <div style="background-color: #f9f9f9; padding: 20px; border: 1px solid #ddd; border-radius: 8px; line-height: 1.6; font-size: 22px;">
-                                    Certainly! Here's a poem about life choices, with each sentence starting with the letter ``C":
-                                    Choices cascade through life's journey, Creating connections with each decision, Careful
-                                    consideration leads to better paths, Courageous choices shape our destiny, Choosing wisely guides us through the years.
-                                </div>
-                            </div>
-
-
-                        </div>
-                </div>
-
-                <div style="width: 100%; font-family: 'Times New Roman', serif; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
-                    <!-- Title Section -->
-                    <div style="background-color: #f4f4f4; padding: 15px; font-weight: bold; text-align: center; border-bottom: 1px solid #ddd; font-size: 24px;">
-                        Multi-turn dialogue case 2
-                    </div>
-
-                        <!-- User and LLaDA-Instruct Sections -->
-                        <div style="display: flex; flex-direction: column; padding: 20px;">
-
-                            <!-- User Section -->
-                            <div style="margin-bottom: 20px;">
-                                <div style="font-weight: bold; color: #333; padding-bottom: 10px; font-size: 22px;">User</div>
-                                <div style="background-color: #f9f9f9; padding: 20px; border: 1px solid #ddd; border-radius: 8px; line-height: 1.6; font-size: 22px;">
-                                    Natalia sold clips to 48 of her friends in April, and then she sold half as many clips in May.
-                                    How many clips did Natalia sell altogether in April and May?
-                                </div>
-                            </div>
-
-                            <!-- LLaDA-Instruct Section -->
-                            <div>
-                                <div style="font-weight: bold; color: #333; padding-bottom: 10px; font-size: 22px;">LLaDA-Instruct</div>
-                                <div style="background-color: #f9f9f9; padding: 20px; border: 1px solid #ddd; border-radius: 8px; line-height: 1.6; font-size: 22px;">
-                                    Natalia sold clips to 48 friends in April. She sold half as many clips in May, so she sold 48/2 = 24 clips in May.
-                                    Altogether, Natalia sold 48 + 24 = 72 clips in April and May. The final result is 72.
-                                </div>
-                            </div>
-
-                            <!-- User Section -->
-                            <div style="margin-bottom: 20px;">
-                                <div style="font-weight: bold; color: #333; padding-bottom: 10px; font-size: 22px;">User</div>
-                                <div style="background-color: #f9f9f9; padding: 20px; border: 1px solid #ddd; border-radius: 8px; line-height: 1.6; font-size: 22px;">
-                                    Natalia sold three times as many items in June as she did in May. How many clips did Natalia sell altogether in these three months?
-                                </div>
-                            </div>
-
-                            <!-- LLaDA-Instruct Section -->
-                            <div>
-                                <div style="font-weight: bold; color: #333; padding-bottom: 10px; font-size: 22px;">LLaDA-Instruct</div>
-                                <div style="background-color: #f9f9f9; padding: 20px; border: 1px solid #ddd; border-radius: 8px; line-height: 1.6; font-size: 22px;">
-                                    Natalia sold clips to 48 friends in April. She sold half as many clips in May, so she sold 48/2 = 24 clips in May.
-                                    Natalia sold three times as many items in June as she did in May, so she sold 24 * 3 = 72 clips in June.
-                                    Altogether, Natalia sold 48 + 24 + 72 = 144 clips in these three months. The final result is 144.
-                                </div>
-                            </div>
-
-
-                        </div>
-                </div>
-
             </div>
         </section>
 
+        <!-- Case Studies Section -->
+        <section class="section-modern" id="Cases">
+            <div class="container is-max-desktop">
+                <h2 class="section-title fade-in">Case Studies</h2>
+                <div class="divider"></div>
 
-        <section class="section" id="BibTeX">
-            <div class="container is-max-desktop content">
-                <h2 class="title" style="font-family: 'Times New Roman', serif;">
-                    BibTeX
-                </h2>
-                <pre><code>@article{nie2025large,
+                <!-- Math Problem -->
+                <div class="case-card fade-in">
+                    <div class="case-header">Math Problem</div>
+                    <div class="case-body">
+                        <div class="chat-message user">
+                            <div class="chat-label">User</div>
+                            <div class="chat-content">Emma decides to run 4 sprints 5 times a week. She runs 75 meters each sprint. How many total meters does she run a week?</div>
+                        </div>
+                        <div class="chat-message assistant">
+                            <div class="chat-label">LLaDA-Instruct</div>
+                            <div class="chat-content">Emma runs 4 sprints each time, so she runs a total of 4 x 5 = 20 sprints a week. Each sprint is 75 meters long, so Emma runs a total of 20 x 75 = 1500 meters a week. The final result is 1500.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Daily Life -->
+                <div class="case-card fade-in">
+                    <div class="case-header">Daily Life</div>
+                    <div class="case-body">
+                        <div class="chat-message user">
+                            <div class="chat-label">User</div>
+                            <div class="chat-content">Please recommend me three famous movies</div>
+                        </div>
+                        <div class="chat-message assistant">
+                            <div class="chat-label">LLaDA-Instruct</div>
+                            <div class="chat-content">Certainly! Here are three famous movies that have achieved widespread popularity and critical acclaim:<br><br>
+                            1. <b>The Shawshank Redemption</b> (1994) - Inspired by a novella and directed by Frank Darabont, this film tells the story of Andy Dufresne, a man convicted of murdering his wife, dealing with his harsh life in Shawshank Prison and forming an unlikely friendship with a fellow inmate.<br><br>
+                            2. <b>The Godfather</b> (1972) - Directed by Francis Ford Coppola, this film is based on Mario Puzo's novel of the same name. It follows the story of the Corleone family, particularly Michael Corleone, who rises to power and takes over the family's criminal empire.<br><br>
+                            3. <b>The Empire Strikes Back</b> (1980) - Directed by George Lucas, this film continues the story of a young Skywalker in the Star Wars saga. It follows Luke Skywalker as he helps the Rebel Alliance fight against the Galactic Empire and destroy the powerful weapon, the Death Star.<br><br>
+                            All of these films are celebrated for their cinematic achievements, powerful storytelling, and memorable characters.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Translation EN -> CN -->
+                <div class="case-card fade-in">
+                    <div class="case-header">Translation (English → Chinese)</div>
+                    <div class="case-body">
+                        <div class="chat-message user">
+                            <div class="chat-label">User</div>
+                            <div class="chat-content">Please help me translate into Chinese: 'What is now proved was once only imagined'</div>
+                        </div>
+                        <div class="chat-message assistant">
+                            <div class="chat-label">LLaDA-Instruct</div>
+                            <div class="chat-content">现在被证明的曾经只是想象</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Multi-turn Dialogue 1 -->
+                <div class="case-card fade-in">
+                    <div class="case-header">Multi-turn Dialogue</div>
+                    <div class="case-body">
+                        <div class="chat-message user">
+                            <div class="chat-label">User</div>
+                            <div class="chat-content">Could you please share with me what the initial two lines of the renowned poem 'The Road Not Taken'?</div>
+                        </div>
+                        <div class="chat-message assistant">
+                            <div class="chat-label">LLaDA-Instruct</div>
+                            <div class="chat-content">Certainly! The initial two lines of the renowned poem "The Road Not Taken" by Robert Frost are: "Two roads diverged in a yellow wood, And sorry I could not travel both." These lines set the stage for the poem, introducing the idea of a speaker facing a choice between two paths.</div>
+                        </div>
+                        <div class="chat-message user">
+                            <div class="chat-label">User</div>
+                            <div class="chat-content">Please help me translate into Chinese.</div>
+                        </div>
+                        <div class="chat-message assistant">
+                            <div class="chat-label">LLaDA-Instruct</div>
+                            <div class="chat-content">Sure! The first two lines of "The Road Not Taken" by Robert Frost can be translated into Chinese as: "两条路分岔在黄色的树林中，遗憾我不能同时走</div>
+                        </div>
+                        <div class="chat-message user">
+                            <div class="chat-label">User</div>
+                            <div class="chat-content">Please also write a poem about life choices. I require 5 sentences, and the first word of each sentence starts with C as the first letter.</div>
+                        </div>
+                        <div class="chat-message assistant">
+                            <div class="chat-label">LLaDA-Instruct</div>
+                            <div class="chat-content">Certainly! Here's a poem about life choices, with each sentence starting with the letter "C":<br><br>
+                            Choices cascade through life's journey,<br>
+                            Creating connections with each decision,<br>
+                            Careful consideration leads to better paths,<br>
+                            Courageous choices shape our destiny,<br>
+                            Choosing wisely guides us through the years.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BibTeX Section -->
+        <section class="section-modern" style="background: var(--bg-light);">
+            <div class="container is-max-desktop">
+                <h2 class="section-title fade-in">Citation</h2>
+                <div class="divider"></div>
+                
+                <div class="bibtex-box fade-in">
+                    <pre><code>@article{nie2025large,
   title={Large language diffusion models},
   author={Nie, Shen and Zhu, Fengqi and You, Zebin and Zhang, Xiaolu and Ou, Jingyang and Hu, Jun and Zhou, Jun and Lin, Yankai and Wen, Ji-Rong and Li, Chongxuan},
   journal={arXiv preprint arXiv:2502.09992},
   year={2025}
 }</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- References Section -->
+        <section class="section-modern">
+            <div class="container is-max-desktop">
+                <h2 class="section-title fade-in">References</h2>
+                <div class="divider"></div>
+                
+                <div class="feature-card fade-in" style="font-size: 1.6rem; line-height: 1.8;">
+                    <p style="margin-bottom: 1.6rem;"><strong>[1]</strong> Austin, J., Johnson, D. D., Ho, J., Tarlow, D., and Van Den Berg, R. Structured denoising diffusion models in discrete state-spaces. <em>Advances in Neural Information Processing Systems</em>, 34:17981-17993, 2021a.</p>
+                    <p style="margin-bottom: 1.6rem;"><strong>[2]</strong> Ou, J., Nie, S., Xue, K., Zhu, F., Sun, J., Li, Z., and Li, C. Your absorbing discrete diffusion secretly models the conditional distributions of clean data. <em>arXiv preprint arXiv:2406.03736</em>, 2024.</p>
+                    <p><strong>[3]</strong> Nie S, Zhu F, Du C, et al. Scaling up Masked Diffusion Models on Text. <em>arXiv preprint arXiv:2410.18514</em>, 2024.</p>
+                </div>
             </div>
         </section>
 
 
-        <section class="section" id="refer">
-            <div class="container is-max-desktop content">
-                <h2 class="title">References</h2>
-                <blockquote>
-                    <p>
-                        [1] Austin, J., Johnson, D. D., Ho, J., Tarlow, D., and
-                        Van Den Berg, R. Structured denoising diffusion models
-                        in discrete state-spaces. Advances in Neural Information
-                        Processing Systems, 34:17981–17993, 2021a.
-                    </p>
-                    <p>
-                        [2] Ou, J., Nie, S., Xue, K., Zhu, F., Sun, J., Li, Z.,
-                        and Li, C. Your absorbing discrete diffusion secretly
-                        models the conditional distributions of clean data.
-                        arXiv preprint arXiv:2406.03736, 2024.
-                    </p>
-                    <p>
-                        [3] Nie S, Zhu F, Du C, et al. Scaling up Masked Diffusion Models on Text[J]. arXiv preprint arXiv:2410.18514, 2024.
-                    </p>
-                </blockquote>
-            </div>
-        </section>
 
+        <script>
+            // Fade in animation on scroll
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        </script>
     </body>
 </html>
